@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {render}  from 'react-dom';
+import useIdleHook from './constants/utils/useIdleHook';
 
 function App() {
+    const idle = useIdleHook(2000);
   return (
-    <div>App</div>
+    <>
+       <p>{idle ? 'user is inactive' : 'user is active'}</p>
+    </>
   )
 }
 
